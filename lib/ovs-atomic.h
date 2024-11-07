@@ -326,7 +326,7 @@
 #include "util.h"
 
 #define IN_OVS_ATOMIC_H
-    #if __CHECKER__
+    #if __CHECKER__ || defined(__aarch64__)
         /* sparse doesn't understand some GCC extensions we use. */
         #include "ovs-atomic-pthreads.h"
     #elif __has_extension(c_atomic)
